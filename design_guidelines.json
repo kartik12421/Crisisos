@@ -1,0 +1,132 @@
+{
+  "app_name": "CRISISOS",
+  "personality": "7 Dark-First Utility DARK",
+  "personality_one_liner": "High-contrast command-center operations surface engineered for split-second crisis response, live telemetry, and zero-friction human-approved dispatch.",
+  "color": {
+    "surface": "#0E1116",
+    "onSurface": "#F0F2F5",
+    "surfaceSecondary": "#171B22",
+    "onSurfaceSecondary": "#C9CDD4",
+    "surfaceTertiary": "#21262D",
+    "onSurfaceTertiary": "#8B949E",
+    "surfaceInverse": "#F0F2F5",
+    "onSurfaceInverse": "#0E1116",
+    "brand": "#DA3633",
+    "brandPrimary": "#DA3633",
+    "onBrandPrimary": "#FFFFFF",
+    "brandSecondary": "#F85149",
+    "onBrandSecondary": "#FFFFFF",
+    "brandTertiary": "#381D1F",
+    "onBrandTertiary": "#FFA198",
+    "success": "#238636",
+    "onSuccess": "#FFFFFF",
+    "warning": "#D29922",
+    "onWarning": "#0E1116",
+    "error": "#F85149",
+    "onError": "#FFFFFF",
+    "info": "#3FB950",
+    "onInfo": "#0E1116",
+    "border": "#30363D",
+    "borderStrong": "#6E7681",
+    "divider": "#21262D",
+    "muted": "#8B949E",
+    "onBrand": "#FFFFFF"
+  },
+  "typography": {
+    "displayFontFamily": "Barlow Condensed",
+    "textFontFamily": "Satoshi",
+    "scale": {
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 20,
+      "2xl": 24
+    }
+  },
+  "spacing": {
+    "rule": "Generous tactical margins with zero clutter, optimizing glanceability and touch targets in emergency states.",
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "3xl": 48
+  },
+  "radius_tokens": {
+    "sm": 6,
+    "md": 12,
+    "lg": 20,
+    "pill": 999
+  },
+  "shadow_tier": "0",
+  "navigation": "bottom_tabs",
+  "icon_set": "MaterialCommunityIcons",
+  "glassmorphism": {
+    "enabled": false,
+    "do's": [
+      "Prioritize absolute clarity and contrast",
+      "Use solid tactical tonal separation for high stress"
+    ],
+    "dont's": [
+      "No heavy blurs or low-contrast translucent overlays that impair data scanning"
+    ]
+  },
+  "platform_libraries": {
+    "glass": {
+      "ios": "expo-blur",
+      "android": "expo-blur",
+      "low_end_android_fallback": "solid surfaceSecondary"
+    },
+    "image": "expo-image",
+    "blur": "expo-blur",
+    "bottom_sheet": "@gorhom/bottom-sheet",
+    "animation": "react-native-reanimated",
+    "gesture": "react-native-gesture-handler"
+  },
+  "screens": [
+    {
+      "name": "CitizenEmergencyView",
+      "purpose": "Provides single-tap SOS activation, real-time incident status tracking, and direct situational reporting.",
+      "states": {
+        "loading": "Active GPS lock spinner with radar pulse animation",
+        "empty": "No active SOS. Ready to broadcast emergency alert.",
+        "error": "GPS / Network failure retry banner with manual location picker"
+      },
+      "layout": "Sticky top status bar, huge one-touch SOS trigger button in bottom thumb zone, live incident progress timeline, and quick-report categories (Building Collapse, Trapped Person, Medical, Fire)."
+    },
+    {
+      "name": "CommandCenterQueue",
+      "purpose": "Enables operators and command admins to review AI recommendations and perform human-approved dispatch actions.",
+      "states": {
+        "loading": "Streaming active telemetry feeds and AI confidence scoring skeletons",
+        "empty": "All regional incidents resolved or under control.",
+        "error": "Connection lost to central CAD websocket. Reconnecting..."
+      },
+      "layout": "Top filter pills for severity and emergency type, incident priority cards with AI confidence badges, bottom action bar for human approval and responder unit assignment."
+    },
+    {
+      "name": "ResponderMissionControl",
+      "purpose": "Equips field responders with turn-by-turn routing, unit status updates (EN_ROUTE, ON_SCENE), and encrypted tactical feeds.",
+      "states": {
+        "loading": "Acquiring secure responder telemetry and routing vectors",
+        "empty": "No active dispatches assigned to unit.",
+        "error": "Unable to verify secure encrypted channel. Retry handshake."
+      },
+      "layout": "Tactical dark map view with incident coordinates, prominent status transition buttons, live roster telemetry, and secure operational notes."
+    }
+  ],
+  "images": {
+    "crisis_map_banner": {
+      "url": "https://images.unsplash.com/photo-1586449480537-3a22cf98b04c?auto=format&fit=crop&q=85&w=1200",
+      "dark": "https://images.unsplash.com/photo-1586449480537-3a22cf98b04c?auto=format&fit=crop&q=85&w=1200",
+      "alt": "Tactical emergency map and radar telemetry interface"
+    },
+    "command_station": {
+      "url": "https://images.unsplash.com/photo-1581089781785-603411fa81e5?auto=format&fit=crop&q=85&w=1200",
+      "dark": "https://images.unsplash.com/photo-1581089781785-603411fa81e5?auto=format&fit=crop&q=85&w=1200",
+      "alt": "Operator at command center monitor"
+    }
+  },
+  "instructions_to_main_agent": "Ensure emergency actions (SOS trigger and Dispatch Approval) are extremely clear with minimum 44x44pt touch targets. Maintain strict role-based workspace separation (Citizen, Responder, Operator). AI must only recommend and never autonomously dispatch. Implement real-time status transitions and robust loading/empty/error states across all screens."
+}

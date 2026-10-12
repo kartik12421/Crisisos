@@ -1,0 +1,39 @@
+# Local environment files (root .gitignore also covers these)
+.env
+.env.*
+!.env.example
+
+# Expo and Metro
+.expo/
+.expo-shared/
+.metro-cache/
+web-build/
+dist/
+expo-env.d.ts
+.metro-health-check*
+
+# Dependencies and generated builds
+node_modules/
+coverage/
+*.tsbuildinfo
+android/.gradle/
+android/app/build/
+ios/Pods/
+ios/build/
+
+# Signing keys and local OS/editor files
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.pem
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Package manager logs
+npm-debug.*
+yarn-debug.*
+yarn-error.*
